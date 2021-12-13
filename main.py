@@ -20,14 +20,17 @@ while menu is True:
         #começando jogo
         print("\n" * os.get_terminal_size().lines)
         explicacao()
-
+        # Perguntando aposta
         aposta = int(input("Quantos pontos você gostaria de apostar?\n"))
         if aposta > pontos:
             print("\n" * os.get_terminal_size().lines)
             print("Você não tem esses pontos!\n")
+        # Perguntando palpite
         else:
             palpite = int(input("Digite seu palpite.\n"))
+            # lançando dado
             dado = random.randint(1,2)
+            # Acerto ou erro
             if palpite == dado:
                 print("Você Acertou!\n")
                 print(f"O dado caio no numero {dado:.0f}")
@@ -38,6 +41,7 @@ while menu is True:
                 print(f"O dado caiu no numero {dado:.0f}")
                 pontos = pontos - aposta
                 print(f"Você perdeu 1 ponto\n total: {pontos}")
+        # Game Over
         if pontos == 0:
             print("\n" * os.get_terminal_size().lines)
             print("GAME OVER!")
