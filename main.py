@@ -22,7 +22,7 @@ while menu is True:
         explicacao()
         # Perguntando aposta
         aposta = int(input("Quantos pontos você gostaria de apostar?\n"))
-        if aposta > pontos:
+        if aposta > pontos or aposta < 0:
             print("\n" * os.get_terminal_size().lines)
             print("Você não tem esses pontos!\n")
         # Perguntando palpite
